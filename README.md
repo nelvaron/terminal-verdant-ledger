@@ -1,10 +1,18 @@
 # Verdant Ledger for Apple Terminal
 
+[![Validate Terminal profile](https://github.com/nelvaron/terminal-verdant-ledger/actions/workflows/validate-profile.yml/badge.svg)](https://github.com/nelvaron/terminal-verdant-ledger/actions/workflows/validate-profile.yml)
+
 A light Apple Terminal profile adapted from the [Verdant Ledger Light theme for Visual Studio Code](https://github.com/nelvaron/vscode-verdant-ledger).
 
 ## Preview
 
-![Verdant Ledger Light in a macOS-style Terminal window, demonstrating ANSI colors, text styles, zsh output, directory listing, and Git status](images/terminal-preview.svg)
+![Verdant Ledger Light in a macOS-style Terminal window, showing the 16 ANSI colors, text styles, git status, git diff, git log, and a colored directory listing](images/terminal-preview.png)
+
+The preview shows the real output of [`scripts/demo.sh`](scripts/demo.sh), rendered with the profile's colors at 100 × 30 in DejaVu Sans Mono (the typeface Menlo is based on). Run the same script in Apple Terminal to see the profile with your own font:
+
+```sh
+sh scripts/demo.sh
+```
 
 ## Profile
 
@@ -25,6 +33,14 @@ The `Bright White` ANSI entry is adjusted to `#52635A` for better contrast again
 2. Open the file, or import it from **Terminal → Settings → Profiles**.
 3. Select **Verdant Ledger Light** for a window. Set it as the default profile in **Terminal → Settings → General** if desired.
 
+## Change the colors
+
+Apple Terminal stores each color as a base64-encoded binary archive, so the profile is not edited by hand. Edit [`scripts/palette.json`](scripts/palette.json), then regenerate the profile:
+
+```sh
+python3 scripts/generate_profile.py
+```
+
 ## Validate
 
 Run the automated tests with Python 3:
@@ -33,7 +49,7 @@ Run the automated tests with Python 3:
 python3 -m unittest discover -s tests -v
 ```
 
-The tests validate the plist structure, profile identity, core colors, and all 16 ANSI color values. They do not emulate Apple's Terminal UI; a manual import and visual smoke test on macOS is still required.
+The tests check that the profile parses, matches the palette and the generator output, meets the contrast targets, and agrees with the documented palette. On pushes to `main` and on pull requests, GitHub Actions also decodes each color with AppKit on macOS. None of this emulates Terminal's UI, so import the profile and check it visually on macOS after changing it.
 
 See [Apple Terminal documentation](docs/APPLE-TERMINAL.md) for the full palette and test commands.
 

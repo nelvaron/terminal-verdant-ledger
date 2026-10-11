@@ -1,0 +1,28 @@
+{
+  "name": "Verdant Ledger Light",
+  "colors": {
+    "BackgroundColor": "#F6F8F6",
+    "TextColor": "#1B2320",
+    "BoldTextColor": "#1B2320",
+    "CursorColor": "#2D6A3B",
+    "SelectionColor": "#D5E1D8"
+  },
+  "ansi": {
+    "ANSIBlackColor": "#1B2320",
+    "ANSIRedColor": "#8A2621",
+    "ANSIGreenColor": "#2D6A3B",
+    "ANSIYellowColor": "#8A6408",
+    "ANSIBlueColor": "#3D5F7A",
+    "ANSIMagentaColor": "#7A4A6E",
+    "ANSICyanColor": "#2F6B6B",
+    "ANSIWhiteColor": "#5D6864",
+    "ANSIBrightBlackColor": "#66716D",
+    "ANSIBrightRedColor": "#B8443A",
+    "ANSIBrightGreenColor": "#3A7D4A",
+    "ANSIBrightYellowColor": "#8F6809",
+    "ANSIBrightBlueColor": "#4A6E8E",
+    "ANSIBrightMagentaColor": "#8D5A80",
+    "ANSIBrightCyanColor": "#367878",
+    "ANSIBrightWhiteColor": "#52635A"
+  }
+}
