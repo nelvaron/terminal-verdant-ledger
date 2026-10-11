@@ -94,8 +94,46 @@ class TerminalProfileTests(unittest.TestCase):
         text = {"TextColor": PALETTE["colors"]["TextColor"], **PALETTE["ansi"]}
         for key, color in text.items():
             with self.subTest(key=key):
+                if key == "ANSIBrightWhiteColor":
+                    # The lightest gray: programs use it on colored
+                    # backgrounds, so it stays light, but remains legible.
+                    self.assertGreaterEqual(contrast(color, background), 3)
+                    continue
                 self.assertGreaterEqual(contrast(color, background), 4.5)
                 self.assertGreaterEqual(contrast(color, selection), 3.5)
+
+    def test_normal_colors_meet_aaa(self):
+        background = PALETTE["colors"]["BackgroundColor"]
+        for name in ANSI_NAMES[1:7]:
+            color = PALETTE["ansi"][f"ANSI{name}Color"]
+            with self.subTest(name=name):
+                self.assertGreaterEqual(contrast(color, background), 7)
+
+    def test_bright_colors_are_lighter_than_normal(self):
+        # Both halves need at least 4.5:1 on a light background, so a bright
+        # color can only be told apart from its normal pair by lightness.
+        background = PALETTE["colors"]["BackgroundColor"]
+        for name in ANSI_NAMES:
+            normal = PALETTE["ansi"][f"ANSI{name}Color"]
+            bright = PALETTE["ansi"][f"ANSIBright{name}Color"]
+            with self.subTest(name=name):
+                ratio = contrast(normal, background) / contrast(bright, background)
+                self.assertGreaterEqual(ratio, 1.5)
+
+    def test_bright_white_is_the_lightest_gray(self):
+        ansi = PALETTE["ansi"]
+        bright_white = luminance(ansi["ANSIBrightWhiteColor"])
+        for key in ("ANSIBlackColor", "ANSIWhiteColor", "ANSIBrightBlackColor"):
+            with self.subTest(key=key):
+                self.assertGreater(bright_white, luminance(ansi[key]))
+
+    def test_red_stays_darker_than_yellow(self):
+        # With red-green color blindness, red and ochre look alike and
+        # lightness is what separates them (see the VS Code theme's DESIGN.md).
+        background = PALETTE["colors"]["BackgroundColor"]
+        red = contrast(PALETTE["ansi"]["ANSIRedColor"], background)
+        yellow = contrast(PALETTE["ansi"]["ANSIYellowColor"], background)
+        self.assertGreaterEqual(red / yellow, 1.5)
 
     def test_cursor_is_visible(self):
         colors = PALETTE["colors"]

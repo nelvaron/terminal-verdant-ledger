@@ -25,7 +25,7 @@ sh scripts/demo.sh
 - **Font used during visual validation:** SF Mono Terminal Regular, 13 pt
 - **Shell tested:** zsh
 
-The `Bright White` ANSI entry is adjusted to `#52635A` for better contrast against the light background. This change applies only to this Terminal profile; it does not alter the [original VS Code theme](https://github.com/nelvaron/vscode-verdant-ledger).
+The ANSI colors follow the [VS Code theme](https://github.com/nelvaron/vscode-verdant-ledger) with two Terminal-only adjustments: normal colors are darkened to at least 7:1 so that each one is clearly different from its bright variant, and bright white is the lightest gray (`#7F8A86`). See [the palette notes](docs/APPLE-TERMINAL.md#normal-and-bright-colors) for the reasons and measurements. The VS Code theme is unchanged.
 
 ## Install
 
