@@ -2,16 +2,37 @@ name: Validate Terminal profile
 
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  validate-profile:
+  tests:
+    name: Profile tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.x"
+      - name: Check the profile matches the palette
+        run: python scripts/generate_profile.py --check
       - name: Run profile validation tests
         run: python -m unittest discover -s tests -v
+
+  appkit:
+    name: AppKit decoding (macOS)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Lint the property list
+        run: plutil -lint profiles/Verdant-Ledger-Light.terminal
+      - name: Decode every color with AppKit
+        run: swift scripts/verify_appkit.swift profiles/Verdant-Ledger-Light.terminal scripts/palette.json
