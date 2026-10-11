@@ -14,14 +14,9 @@ work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 cd "$work"
 
-prompt() {
-  printf '%s@%s %s %% %s' "$user" "$host" "${PWD##*/}" "${1:-}"
-}
-
 # Show a zsh-style prompt with a command line, then run a command.
 step() {
-  prompt "$1"
-  printf '\n'
+  printf '%s@%s %s %% %s\n' "$user" "$host" "${PWD##*/}" "$1"
   shift
   "$@"
 }
@@ -43,11 +38,13 @@ colors() {
   printf '\033[34minfo\033[0m  \033[31merror\033[0m\n'
 }
 
-# Match the default macOS ls colors (LSCOLORS=exfxcxdxbxegedabagacad).
+# Use the default macOS ls colors, whatever the user has configured.
+# BSD ls reads LSCOLORS; GNU ls reads LS_COLORS.
 listing() {
-  if ls --color=auto / >/dev/null 2>&1; then
-    LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43' \
-      ls -C --color=always
+  export LSCOLORS=exfxcxdxbxegedabagacad
+  export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+  if ls --color=always / >/dev/null 2>&1; then
+    ls -C --color=always
   else
     CLICOLOR_FORCE=1 ls -CG
   fi
@@ -76,4 +73,3 @@ step 'git status -sb' git status -sb
 step 'git diff' git diff
 step 'git log --oneline --graph' git log --oneline --graph --decorate
 step 'ls' listing
-prompt

@@ -9,20 +9,20 @@
   },
   "ansi": {
     "ANSIBlackColor": "#1B2320",
-    "ANSIRedColor": "#8A2621",
-    "ANSIGreenColor": "#2D6A3B",
-    "ANSIYellowColor": "#8A6408",
-    "ANSIBlueColor": "#3D5F7A",
-    "ANSIMagentaColor": "#7A4A6E",
-    "ANSICyanColor": "#2F6B6B",
+    "ANSIRedColor": "#651916",
+    "ANSIGreenColor": "#236032",
+    "ANSIYellowColor": "#6F4F01",
+    "ANSIBlueColor": "#375873",
+    "ANSIMagentaColor": "#744569",
+    "ANSICyanColor": "#205D5E",
     "ANSIWhiteColor": "#5D6864",
     "ANSIBrightBlackColor": "#66716D",
     "ANSIBrightRedColor": "#B8443A",
     "ANSIBrightGreenColor": "#3A7D4A",
-    "ANSIBrightYellowColor": "#8F6809",
-    "ANSIBrightBlueColor": "#4A6E8E",
-    "ANSIBrightMagentaColor": "#8D5A80",
-    "ANSIBrightCyanColor": "#367878",
-    "ANSIBrightWhiteColor": "#52635A"
+    "ANSIBrightYellowColor": "#986702",
+    "ANSIBrightBlueColor": "#427698",
+    "ANSIBrightMagentaColor": "#9B5B8D",
+    "ANSIBrightCyanColor": "#267C78",
+    "ANSIBrightWhiteColor": "#7F8A86"
   }
 }
