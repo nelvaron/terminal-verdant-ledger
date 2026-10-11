@@ -6,9 +6,9 @@ A light Apple Terminal profile adapted from the [Verdant Ledger Light theme for 
 
 ## Preview
 
-![Verdant Ledger Light in a macOS-style Terminal window, showing the 16 ANSI colors, text styles, git status, git diff, git log, and a colored directory listing](images/terminal-preview.png)
+![Verdant Ledger Light in Apple Terminal on macOS, showing the 16 ANSI colors, text styles, git status, git diff, git log, and a colored directory listing](images/terminal-preview.png)
 
-The preview shows the real output of [`scripts/demo.sh`](scripts/demo.sh), rendered with the profile's colors at 100 × 30 in DejaVu Sans Mono (the typeface Menlo is based on). Run the same script in Apple Terminal to see the profile with your own font:
+A screenshot of Apple Terminal on macOS running [`scripts/demo.sh`](scripts/demo.sh) at 100 × 30. Run the same script to try the profile with your own font:
 
 ```sh
 sh scripts/demo.sh
