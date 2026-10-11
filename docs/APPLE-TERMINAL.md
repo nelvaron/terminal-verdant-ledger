@@ -103,6 +103,12 @@ GitHub Actions runs the tests on Ubuntu, and on macOS lints the plist with `plut
 sh scripts/demo.sh
 ```
 
+The prompt shows your user and computer names. Set `DEMO_USER` and `DEMO_HOST` to replace them, for example before a screenshot:
+
+```sh
+DEMO_USER=you DEMO_HOST=macbook sh scripts/demo.sh
+```
+
 To capture a window screenshot on macOS, press **Shift-Command-4**, then **Space**, and click the Terminal window.
 
 ### ANSI color swatches
@@ -125,7 +131,7 @@ printf '\e[32mSuccess\e[0m  \e[33mWarning\e[0m  \e[34mInfo\e[0m  \e[31mError\e[0
 
 ## Visual validation results
 
-The profile was imported successfully into Apple Terminal and checked in a zsh window.
+The profile was imported into Apple Terminal and checked in a zsh window.
 
 - The 16 ANSI colors were distinguishable in the provided swatches.
 - Foreground and background appeared readable.
@@ -133,7 +139,11 @@ The profile was imported successfully into Apple Terminal and checked in a zsh w
 - Success, warning, information, and error colors were distinguishable.
 - The green cursor was clearly visible.
 
-These checks were made with the earlier palette, before the normal and bright colors were separated. The screenshot that prompted that change showed the profile importing and rendering correctly; repeat the smoke test with the current palette.
+The current palette was checked again with `scripts/demo.sh`, which produced the README screenshot:
+
+- Every normal color is visibly darker than its bright variant, including yellow, cyan, and white.
+- Bright white is the lightest gray.
+- Solid areas in the screenshot match the profile: the background, the cursor block, and the `inverse` background measure within one RGB step of `#F6F8F6`, `#2D6A3B`, and `#1B2320`.
 
 The validated configuration used SF Mono Terminal Regular, 13 pt. Menlo Regular, 13 pt, was also found readable, but is not required.
 
