@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">Verdant Ledger Light — Apple Terminal preview</title>
+<desc id="desc">A macOS Terminal-style window demonstrating the Verdant Ledger Light background, text styles, ANSI colors, zsh output, and Git status. All names and output are fictional.</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9eee8"/><stop offset="1" stop-color="#dce7dd"/></linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fbfcfa"/><stop offset="1" stop-color="#f3f7f3"/></linearGradient>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#334b3a" flood-opacity=".16"/></filter>
+  <style>
+    .mono{font-family:SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:22px;fill:#1b2320}
+    .small{font-size:18px}.prompt{fill:#2d7b46;font-weight:700}.green{fill:#2d6a3b}.red{fill:#b8443a}.ochre{fill:#8a6408}.blue{fill:#3d5f7a}.teal{fill:#2f6b6b}.plum{fill:#7a4a6e}.muted{fill:#66716d}.gray{fill:#5d6864}.bold{font-weight:700}.italic{font-style:italic}.link{fill:#376d9a}.rule{stroke:#cfd8d0;stroke-width:1.5}
+  </style>
+</defs>
+<rect width="1600" height="1000" fill="url(#background)"/>
+<rect x="44" y="34" width="1512" height="932" rx="22" fill="url(#panel)" stroke="#cbd7cd" filter="url(#shadow)"/>
+<path d="M66 34h1468a22 22 0 0 1 22 22v35H44V56a22 22 0 0 1 22-22z" fill="#f8faf7" stroke="#cbd7cd"/>
+<circle cx="73" cy="67" r="9" fill="#ff6058" stroke="#e14e47"/><circle cx="101" cy="67" r="9" fill="#ffbd2e" stroke="#d9a01f"/><circle cx="129" cy="67" r="9" fill="#28c840" stroke="#1da832"/>
+<rect x="170" y="55" width="23" height="18" rx="3" fill="#496b71"/><path d="M174 51h8l3 4h-14z" fill="#496b71"/>
+<text x="207" y="73" font-family="SF Pro Display,Arial,sans-serif" font-size="22" font-weight="600" fill="#33483c">~ — zsh</text>
+<text x="1495" y="73" text-anchor="end" class="mono small muted">100 × 30</text>
+<line x1="44" y1="92" x2="1556" y2="92" class="rule"/>
+<line x1="1030" y1="120" x2="1030" y2="886" class="rule"/>
+<line x1="68" y1="555" x2="1005" y2="555" class="rule"/>
+<!-- left main pane -->
+<text x="72" y="138" class="mono"><tspan class="prompt">❯</tspan><tspan> echo "Verdant Ledger Light — Apple Terminal"</tspan></text>
+<text x="72" y="170" class="mono">Verdant Ledger Light — Apple Terminal</text>
+<text x="980" y="138" text-anchor="end" class="mono small muted">14:27</text>
+<text x="72" y="215" class="mono"><tspan class="prompt">❯</tspan><tspan> printf 'Text styles: Normal Bold Dim Italic Underline'</tspan></text>
+<text x="72" y="247" class="mono">Text styles: <tspan class="bold">Bold</tspan><tspan fill="#a2aaa5"> Dim </tspan><tspan class="italic">Italic</tspan><tspan text-decoration="underline"> Underline</tspan></text>
+<text x="72" y="292" class="mono"><tspan class="prompt">❯</tspan><tspan> printf 'Status: Success Warning Info Error'</tspan></text>
+<text x="72" y="324" class="mono">Status: <tspan class="green bold">Success</tspan><tspan class="ochre bold">  Warning</tspan><tspan class="blue bold">  Info</tspan><tspan class="red bold">  Error</tspan></text>
+<text x="72" y="369" class="mono"><tspan class="prompt">❯</tspan><tspan> ./show-ansi-colors</tspan></text>
+<g transform="translate(78 389)">
+  <rect width="112" height="36" fill="#1b2320"/><rect x="112" width="112" height="36" fill="#8a2621"/><rect x="224" width="112" height="36" fill="#2d6a3b"/><rect x="336" width="112" height="36" fill="#8a6408"/><rect x="448" width="112" height="36" fill="#3d5f7a"/><rect x="560" width="112" height="36" fill="#7a4a6e"/><rect x="672" width="112" height="36" fill="#2f6b6b"/><rect x="784" width="112" height="36" fill="#5d6864"/>
+  <rect y="36" width="112" height="36" fill="#66716d"/><rect x="112" y="36" width="112" height="36" fill="#b8443a"/><rect x="224" y="36" width="112" height="36" fill="#3a7d4a"/><rect x="336" y="36" width="112" height="36" fill="#8f6809"/><rect x="448" y="36" width="112" height="36" fill="#4a6e8e"/><rect x="560" y="36" width="112" height="36" fill="#8d5a80"/><rect x="672" y="36" width="112" height="36" fill="#367878"/><rect x="784" y="36" width="112" height="36" fill="#52635a"/>
+  <g font-family="SFMono-Regular,Menlo,monospace" font-size="17" text-anchor="middle"><g fill="#f6f8f6"><text x="56" y="24">black</text><text x="168" y="24">red</text><text x="280" y="24">green</text><text x="392" y="24">yellow</text><text x="504" y="24">blue</text><text x="616" y="24">magenta</text><text x="728" y="24">cyan</text><text x="840" y="24">white</text></g><g fill="#f6f8f6"><text x="56" y="60">bright</text><text x="168" y="60">bright</text><text x="280" y="60">bright</text><text x="392" y="60">bright</text><text x="504" y="60">bright</text><text x="616" y="60">bright</text><text x="728" y="60">bright</text><text x="840" y="60">bright</text></g></g>
+</g>
+<text x="72" y="504" class="mono"><tspan class="prompt">❯</tspan><tspan> cd ~/Projects/terminal-verdant-ledger</tspan></text>
+<text x="72" y="535" class="mono"><tspan class="prompt">❯</tspan><tspan> git status -sb</tspan></text>
+<text x="72" y="583" class="mono">## main...origin/main</text>
+<text x="72" y="615" class="mono"><tspan class="green"> M</tspan><tspan> README.md</tspan></text>
+<text x="72" y="647" class="mono"><tspan class="green"> M</tspan><tspan> docs/APPLE-TERMINAL.md</tspan></text>
+<text x="72" y="679" class="mono"><tspan class="ochre">??</tspan><tspan> images/terminal-preview.svg</tspan></text>
+<text x="72" y="727" class="mono"><tspan class="prompt">❯</tspan><tspan> ls -la</tspan></text>
+<text x="72" y="761" class="mono small muted">total 32</text>
+<text x="72" y="788" class="mono small">drwxr-xr-x  .  ..  .github  docs  images</text>
+<text x="72" y="815" class="mono small">drwxr-xr-x  profiles  tests</text>
+<text x="72" y="842" class="mono small">-rw-r--r--  CONTRIBUTING.md  LICENSE  README.md</text>
+<text x="72" y="889" class="mono"><tspan class="prompt">❯</tspan><tspan> </tspan><rect x="91" y="866" width="12" height="26" rx="1" fill="#2d6a3b"/></text>
+<!-- right pane -->
+<text x="1070" y="143" class="mono small green">OS:</text><text x="1200" y="143" class="mono small">macOS</text>
+<text x="1070" y="176" class="mono small green">Shell:</text><text x="1200" y="176" class="mono small">zsh</text>
+<text x="1070" y="209" class="mono small green">Terminal:</text><text x="1200" y="209" class="mono small">Apple Terminal</text>
+<text x="1070" y="242" class="mono small green">Theme:</text><text x="1200" y="242" class="mono small">Verdant Ledger Light</text>
+<text x="1070" y="275" class="mono small green">Font:</text><text x="1200" y="275" class="mono small">SF Mono Terminal 13</text>
+<text x="1070" y="326" class="mono small muted">PROJECT TREE</text>
+<text x="1070" y="364" class="mono small">.</text>
+<text x="1070" y="393" class="mono small">├── <tspan class="link">.github/workflows</tspan></text>
+<text x="1070" y="422" class="mono small">├── <tspan class="link">docs</tspan></text>
+<text x="1070" y="451" class="mono small">├── <tspan class="link">images</tspan></text>
+<text x="1070" y="480" class="mono small">├── <tspan class="link">profiles</tspan></text>
+<text x="1070" y="509" class="mono small">├── <tspan class="link">tests</tspan></text>
+<text x="1070" y="538" class="mono small">├── CONTRIBUTING.md</text>
+<text x="1070" y="567" class="mono small">├── LICENSE</text>
+<text x="1070" y="596" class="mono small">└── README.md</text>
+<line x1="1060" y1="625" x2="1520" y2="625" class="rule"/>
+<text x="1070" y="663" class="mono small green">❯ cat README.md | head</text>
+<text x="1070" y="698" class="mono small"># Verdant Ledger for</text>
+<text x="1070" y="725" class="mono small"># Apple Terminal</text>
+<text x="1070" y="767" class="mono small muted">A calm, readable light</text>
+<text x="1070" y="794" class="mono small muted">profile with a restrained</text>
+<text x="1070" y="821" class="mono small muted">green-gray palette.</text>
+<text x="1070" y="875" class="mono small green">◆ 16 ANSI colors · zsh · Git</text>
+</svg>
