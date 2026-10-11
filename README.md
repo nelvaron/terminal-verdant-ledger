@@ -2,6 +2,10 @@
 
 A light Apple Terminal profile adapted from the [Verdant Ledger Light theme for Visual Studio Code](https://github.com/nelvaron/vscode-verdant-ledger).
 
+## Preview
+
+![Verdant Ledger Light in a macOS-style Terminal window, demonstrating ANSI colors, text styles, zsh output, directory listing, and Git status](images/terminal-preview.svg)
+
 ## Profile
 
 - **Profile:** `Verdant Ledger Light`
@@ -19,16 +23,24 @@ The `Bright White` ANSI entry is adjusted to `#52635A` for better contrast again
 
 1. Download `profiles/Verdant-Ledger-Light.terminal`.
 2. Open the file, or import it from **Terminal → Settings → Profiles**.
-3. Select **Verdant Ledger Light** for a window. Set it as the default profile in **Terminal → Settings → General** only if desired.
+3. Select **Verdant Ledger Light** for a window. Set it as the default profile in **Terminal → Settings → General** if desired.
 
 ## Validate
 
-The automated test checks the outer plist, required profile settings, all 16 ANSI color archives, and their RGB values. It does not emulate Apple's Terminal GUI or replace a visual import test on macOS.
-
-Run with Python 3:
+Run the automated tests with Python 3:
 
 ```sh
 python3 -m unittest discover -s tests -v
 ```
 
-A macOS visual smoke test is still required after importing: inspect the background, text, ANSI colors, text styles, selection, and cursor in Apple Terminal. The manual commands and detailed palette are in [`docs/APPLE-TERMINAL.md`](docs/APPLE-TERMINAL.md).
+The tests validate the plist structure, profile identity, core colors, and all 16 ANSI color values. They do not emulate Apple's Terminal UI; a manual import and visual smoke test on macOS is still required.
+
+See [Apple Terminal documentation](docs/APPLE-TERMINAL.md) for the full palette and test commands.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE)
