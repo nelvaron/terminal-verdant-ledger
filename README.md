@@ -53,6 +53,11 @@ The tests check that the profile parses, matches the palette and the generator o
 
 See [Apple Terminal documentation](docs/APPLE-TERMINAL.md) for the full palette and test commands.
 
+## Accessibility
+
+Contrast targets, known barriers, and how to report a problem are described in
+[ACCESSIBILITY.md](ACCESSIBILITY.md).
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
