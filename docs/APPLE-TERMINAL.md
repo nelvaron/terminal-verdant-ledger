@@ -21,23 +21,23 @@ The profile adapts the [Verdant Ledger Light VS Code theme](https://github.com/n
 | ANSI color | Hex | Contrast against `#F6F8F6` | VS Code theme |
 |---|---|---:|---|
 | Black | `#1B2320` | 15.04:1 | same |
-| Red | `#651916` | 11.55:1 | `#8A2621` |
-| Green | `#236032` | 7.05:1 | `#2D6A3B` |
-| Yellow | `#6F4F01` | 7.04:1 | `#8A6408` |
-| Blue | `#375873` | 7.01:1 | `#3D5F7A` |
-| Magenta | `#744569` | 7.03:1 | `#7A4A6E` |
-| Cyan | `#205D5E` | 7.06:1 | `#2F6B6B` |
+| Red | `#651916` | 11.55:1 | same |
+| Green | `#236032` | 7.05:1 | same |
+| Yellow | `#6F4F01` | 7.04:1 | same |
+| Blue | `#375873` | 7.01:1 | same |
+| Magenta | `#4D2E45` | 10.98:1 | same |
+| Cyan | `#205D5E` | 7.06:1 | same |
 | White | `#5D6864` | 5.42:1 | same |
 | Bright black | `#66716D` | 4.74:1 | same |
 | Bright red | `#B8443A` | 5.01:1 | same |
 | Bright green | `#3A7D4A` | 4.67:1 | same |
-| Bright yellow | `#986702` | 4.60:1 | `#8F6809` |
-| Bright blue | `#427698` | 4.60:1 | `#4A6E8E` |
-| Bright magenta | `#9B5B8D` | 4.60:1 | `#8D5A80` |
-| Bright cyan | `#267C78` | 4.64:1 | `#367878` |
-| Bright white | `#7F8A86` | 3.35:1 | `#8C9894` |
+| Bright yellow | `#986702` | 4.60:1 | same |
+| Bright blue | `#427698` | 4.60:1 | same |
+| Bright magenta | `#9B5B8D` | 4.60:1 | same |
+| Bright cyan | `#267C78` | 4.64:1 | same |
+| Bright white | `#7F8A86` | 3.35:1 | same |
 
-The palette lives in [`scripts/palette.json`](../scripts/palette.json). It follows the `terminal.*` colors of the VS Code theme, with the changes below so that every normal color can be told apart from its bright variant.
+The palette lives in [`scripts/palette.json`](../scripts/palette.json). It matches the `terminal.*` colors of the VS Code theme from version 1.2.0. The theme adopted this palette in 1.1.0; the sections below explain how it differs from the theme's syntax colors, so that every normal color can be told apart from its bright variant.
 
 Contrast ratios are calculated against the specified profile background. They are useful indicators, but perceived readability also depends on display settings and font rendering.
 
@@ -51,6 +51,8 @@ Both halves of the palette need at least 4.5:1 on a light background, so they sh
 Every normal and bright pair now differs by at least 10 CIEDE2000 units.
 
 Red is darkened further, to 11.55:1. With red-green color blindness, red and ochre look alike and only lightness separates them; the theme's design keeps red darker than the ochre for that reason. After simulating deuteranopia, the profile's red and yellow differ by 12.0 CIEDE2000 units, matching the theme's 11.9.
+
+Magenta is darkened further too, to 10.98:1. Cyan cannot get lighter without dropping below 7:1, so magenta moves away from it in lightness. After simulating deuteranopia, magenta and cyan differ by 7.9 CIEDE2000 units, where the earlier `#744569` managed 2.7, and magenta and blue by 11.8 (was 5.9). The bright magenta and cyan both sit near 4.6:1 and stay closer, at 5.1.
 
 ### Grays
 
