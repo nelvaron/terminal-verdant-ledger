@@ -49,9 +49,10 @@ behavior.
   stays at least 1.5 times darker than yellow. The **Validate Terminal
   profile** workflow runs these tests on every pull request, and decodes every
   color with AppKit on macOS.
-- **Color blindness:** the colors were compared after simulating deuteranopia
-  (Machado, Oliveira and Fernandes, 2009) with the CIEDE2000 color
-  difference. Red and yellow are 12.0 units apart.
+- **Color blindness:** the tests simulate deuteranopia and protanopia
+  (Machado, Oliveira and Fernandes, 2009) and require a CIEDE2000 difference
+  of at least 7 between red and yellow (12.0 with deuteranopia) and between
+  the normal magenta and cyan (7.9).
 - **On a Mac:** the current palette was imported into Terminal and checked
   with `scripts/demo.sh`; the README screenshot comes from that check.
 
@@ -61,9 +62,12 @@ behavior.
 - **Bright white is paler than the other colors**, at 3.35:1 on the
   background and 2.65:1 on the selection. It is the lightest gray, which is
   what programs expect when they print bright white on colored backgrounds.
-- **Magenta and cyan look alike with deuteranopia**: 2.7 CIEDE2000 units apart
-  for the normal colors and 5.1 for the bright ones; blue and magenta are 5.9
-  apart. Output that tells these apart only by color can be hard to read.
+- **Bright magenta and bright cyan look alike with deuteranopia**: 5.1
+  CIEDE2000 units apart. Both sit near 4.6:1, so they cannot differ much in
+  lightness while staying clearly lighter than their normal colors. The
+  normal magenta was darkened in October 2026 for the same reason; normal
+  magenta and cyan are now 7.9 apart (were 2.7), and normal blue and magenta
+  11.8 (were 5.9).
 - **Colors the profile does not control.** Programs can choose colors from the
   256-color and true-color palettes, or set their own backgrounds. Those are
   not checked.
