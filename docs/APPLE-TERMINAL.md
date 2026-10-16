@@ -145,7 +145,7 @@ The current palette was checked again with `scripts/demo.sh`, which produced the
 
 - Every normal color is visibly darker than its bright variant, including yellow, cyan, and white.
 - Bright white is the lightest gray.
-- Solid areas in the screenshot match the profile: the background, the cursor block, and the `inverse` background measure within one RGB step of `#F6F8F6`, `#2D6A3B`, and `#1B2320`.
+- Solid areas in the capture match the profile: the background, the cursor block, and the `inverse` background measure within one RGB step of `#F6F8F6`, `#2D6A3B`, and `#1B2320`.
 
 The validated configuration used SF Mono Terminal Regular, 13 pt. Menlo Regular, 13 pt, was also found readable, but is not required.
 
